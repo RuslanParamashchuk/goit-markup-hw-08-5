@@ -121,7 +121,6 @@ a {
 
 .header-link {
   display: block;
-  padding-top: 10px;
 }
 
 .header-link:hover {
@@ -242,8 +241,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .adress-list {
-    display: flex;
-    flex-direction: column;
+    display: block;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
@@ -253,6 +251,7 @@ a {
 
 @media screen and (min-width: 1200px) {
   .adress-list {
+    display: flex;
     flex-direction: row;
     font-weight: 500;
     font-size: 14px;
@@ -262,7 +261,14 @@ a {
 }
 
 .adress-list__item {
+  margin-top: 10px;
   align-items: flex-end;
+}
+
+@media screen and (min-width: 1200px) {
+  .adress-list__item {
+    margin-top: 0px;
+  }
 }
 
 .adress-icon:hover .header-adress-list {
@@ -408,11 +414,11 @@ a {
 }
 
 .logo {
-  margin: 16px 88px 16px 15px;
   font-family: Raleway;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  margin-right: 88px;
   text-decoration: none;
 }
 
@@ -445,10 +451,6 @@ a {
   }
 }
 
-.footer__list {
-  margin-bottom: 60px;
-}
-
 @media screen and (min-width: 768px) {
   .footer__list {
     margin-bottom: 0px;
@@ -476,6 +478,7 @@ a {
 }
 
 .footer__container {
+  margin-bottom: 60px;
   display: block;
   text-align: center;
 }
@@ -897,7 +900,7 @@ a {
   font-weight: 700;
   font-size: 28px;
   line-height: 33px;
-  margin-bottom: 65px;
+  margin-bottom: 40px;
   text-align: center;
   color: var(--title-text-color);
 }
@@ -936,11 +939,16 @@ a {
   }
 }
 
-.team__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: -30px;
+.team__list:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .team__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }
 
 .team__name {
@@ -1124,6 +1132,7 @@ a {
   .portfolio-catalogue-list {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -30px;
   }
 }
 
